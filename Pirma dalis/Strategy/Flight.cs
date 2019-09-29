@@ -6,5 +6,6 @@ namespace Pirma_dalis.Strategy
 {
     class Flight
     {
+
     }
 }
