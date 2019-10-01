@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Pirma_dalis.Strategy
 {
-    class Flight
+    class FlightStrategy
     {
         private string flightType;
         private int weight;
@@ -14,13 +14,15 @@ namespace Pirma_dalis.Strategy
         private IProfitCounter pc;
 
 
-        public Flight(string flightType, int weight, int distance, IProfitCounter pc)
+        public FlightStrategy(string flightType, int weight, int distance, IProfitCounter pc)
         {
             this.flightType = flightType;
             this.weight = weight;
             this.distance = distance;
             this.pc = pc;
         }
+
+
 
         public void calProfit()
         {

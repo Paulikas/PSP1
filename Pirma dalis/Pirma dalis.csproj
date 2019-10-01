@@ -6,8 +6,4 @@
     <RootNamespace>Pirma_dalis</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Template\" />
-  </ItemGroup>
-
 </Project>
