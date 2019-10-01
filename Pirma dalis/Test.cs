@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pirma_dalis.Strategy;
+using System;
 
 namespace Pirma_dalis
 {
@@ -6,7 +7,14 @@ namespace Pirma_dalis
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            double value;
+            Flight cargo = new Flight("Cargo",10000,600, new Cargo());
+            cargo.calProfit();
+            value = cargo.flightProfits;
+
+            Console.WriteLine("Value is: " + value);
+
+            Console.ReadKey();
         }
     }
 }
