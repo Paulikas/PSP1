@@ -10,7 +10,6 @@ namespace Pirma_dalis.Strategy
         private int weight;
         private int distance;
         private const double FUEL_PRICE_PER_100 = 1.25;
-        public double flightProfits;
         private IProfitCounter pc;
 
 
@@ -24,7 +23,7 @@ namespace Pirma_dalis.Strategy
 
 
 
-        public void calProfit()
+        public double calProfit()
         {
             double sum = 0;
 
@@ -32,7 +31,8 @@ namespace Pirma_dalis.Strategy
 
             sum = sum - pc.fuelCost(distance, FUEL_PRICE_PER_100) - pc.insuranceCost() - pc.maintenance(distance, weight);
 
-            flightProfits = sum;
+            return sum;
         }
+
     }
 }
