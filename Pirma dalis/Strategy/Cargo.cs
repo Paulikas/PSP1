@@ -31,7 +31,7 @@ namespace Pirma_dalis.Strategy
             return weight * 0.6;
         }
 
-        public double flightValue(int weight)
+        public double tripValue(int weight)
         {
             return weight * 4.5;
         }

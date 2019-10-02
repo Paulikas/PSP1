@@ -1,0 +1,1 @@
+1. Kaip reik implementuoti pirmos dalies A reikalavimą su šablonu?

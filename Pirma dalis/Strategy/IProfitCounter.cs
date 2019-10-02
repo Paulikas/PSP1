@@ -8,6 +8,6 @@
 
         public double maintenance(int distance, int weight);
 
-        public double flightValue(int weight);
+        public double tripValue(int weight);
     }
 }

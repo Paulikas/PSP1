@@ -4,25 +4,22 @@ using System.Text;
 
 namespace Pirma_dalis.Strategy
 {
-    class FlightStrategy
+    class Ship
     {
-        private string flightType;
+        private string tripType;
         private int weight;
         private int distance;
-        private const double FUEL_PRICE_PER_100 = 1.25;
-        public double flightProfits;
+        private const double FUEL_PRICE_PER_100 = 6;
+        public double tripProfits;
         private IProfitCounter pc;
 
-
-        public FlightStrategy(string flightType, int weight, int distance, IProfitCounter pc)
+        public Ship(string tripType, int weight, int distance, IProfitCounter pc)
         {
-            this.flightType = flightType;
+            this.tripType = tripType;
             this.weight = weight;
             this.distance = distance;
             this.pc = pc;
         }
-
-
 
         public void calProfit()
         {
@@ -32,7 +29,7 @@ namespace Pirma_dalis.Strategy
 
             sum = sum - pc.fuelCost(distance, FUEL_PRICE_PER_100) - pc.insuranceCost() - pc.maintenance(distance, weight);
 
-            flightProfits = sum;
+            tripProfits = sum;
         }
     }
 }

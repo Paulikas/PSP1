@@ -6,7 +6,7 @@ namespace Pirma_dalis.Strategy
 {
     class AirBus : IProfitCounter
     {
-        public double flightValue(int weight)
+        public double tripValue(int weight)
         {
             return profitFromTickets(weight);
         }
@@ -29,10 +29,11 @@ namespace Pirma_dalis.Strategy
                 return 4000.12;
         }
 
-        private double profitFromTickets(int weight)
+        private double profitFromTickets(int amount)
         {
-            int peopleCount = weight / 60;
+            int peopleCount = amount / 60;
             return peopleCount * 98.97;
         }
+
     }
 }

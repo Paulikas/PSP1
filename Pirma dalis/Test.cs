@@ -40,6 +40,15 @@ namespace Pirma_dalis
 
             Console.WriteLine("Value of AirBus is: " + value);
 
+            //A reikalvavimas
+
+            Strategy.Ship cruise = new Strategy.Ship("Cruise", 1000000, 3000, new AirBus());
+
+            cruise.calProfit();
+            value = cruise.tripProfits;
+
+            Console.WriteLine("Value of cruise is " + value);
+
             Console.ReadKey();
         }
     }
