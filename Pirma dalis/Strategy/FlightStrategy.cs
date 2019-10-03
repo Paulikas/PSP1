@@ -6,32 +6,50 @@ namespace Pirma_dalis.Strategy
 {
     class FlightStrategy
     {
-        private string flightType;
-        private int weight;
+        private string pilotClass;
+        private int lastMaintenance;
+        private string weather;
+        private IInsuranceCalculator pc;
         private int distance;
-        private const double FUEL_PRICE_PER_100 = 1.25;
-        private IProfitCounter pc;
+        private string landingLocation;
+        private ITripCost tc;
 
-
-        public FlightStrategy(string flightType, int weight, int distance, IProfitCounter pc)
+        public FlightStrategy(string pilotClass, int lastMaintenance, string weather, IInsuranceCalculator pc)
         {
-            this.flightType = flightType;
-            this.weight = weight;
-            this.distance = distance;
+            this.pilotClass = pilotClass;
+            this.lastMaintenance = lastMaintenance;
+            this.weather = weather;
             this.pc = pc;
         }
 
+        public FlightStrategy(string pilotClass, int lastMaintenance, string weather, IInsuranceCalculator pc, int distance, string landingLocation, ITripCost tc) : this(pilotClass, lastMaintenance, weather, pc)
+        {
+            this.distance = distance;
+            this.landingLocation = landingLocation;
+            this.tc = tc;
+        }
 
-
-        public double calProfit()
+        public double calInsurace()
         {
             double sum = 0;
 
-            sum = pc.tripValue(weight);
-
-            sum = sum - pc.fuelCost(distance, FUEL_PRICE_PER_100) - pc.insuranceCost() - pc.maintenance(distance, weight);
+            sum = pc.checkLastMaintenance(lastMaintenance) + pc.checkPilotClass(pilotClass) + pc.checkWeatherConditions(weather) + pc.checkFlightSpecificRisks();
 
             return sum;
+        }
+
+        public double calTripCost()
+        {
+            double sum = 0;
+
+            sum = tc.crewCost() + tc.fuelCost(distance) + tc.permissionCost(landingLocation);
+
+            return sum;
+        }
+
+        public double calFlightExpences()
+        {
+            return calInsurace() + calTripCost();
         }
 
     }

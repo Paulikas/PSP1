@@ -6,30 +6,26 @@ namespace Pirma_dalis.Strategy
 {
     class Ship
     {
-        private string tripType;
-        private int weight;
-        private int distance;
-        private const double FUEL_PRICE_PER_100 = 6;
-        public double tripProfits;
-        private IProfitCounter pc;
+        private string crewTier;
+        private int lastMaintenance;
+        private string weather;
+        private IInsuranceCalculator pc;
 
-        public Ship(string tripType, int weight, int distance, IProfitCounter pc)
+        public Ship(string crewTier, int lastMaintenance, string weather, IInsuranceCalculator pc)
         {
-            this.tripType = tripType;
-            this.weight = weight;
-            this.distance = distance;
+            this.crewTier = crewTier;
+            this.lastMaintenance = lastMaintenance;
+            this.weather = weather;
             this.pc = pc;
         }
 
-        public void calProfit()
+        public double calInsurace()
         {
             double sum = 0;
 
-            sum = pc.tripValue(weight);
+            sum = pc.checkLastMaintenance(lastMaintenance) + pc.checkPilotClass(crewTier) + pc.checkWeatherConditions(weather) + pc.checkFlightSpecificRisks();
 
-            sum = sum - pc.fuelCost(distance, FUEL_PRICE_PER_100) - pc.insuranceCost() - pc.maintenance(distance, weight);
-
-            tripProfits = sum;
+            return sum;
         }
     }
 }

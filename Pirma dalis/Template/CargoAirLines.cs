@@ -4,13 +4,13 @@ using System.Text;
 
 namespace Pirma_dalis.Template
 {
-    class Cargo : FlightTemplate1
+    class CargoAirLines : FlightTemplate2
     {
-        public Cargo(string pilotClass, int lastMaintenance, string weather) : base(pilotClass, lastMaintenance, weather)
+        public CargoAirLines(string pilotClass, int lastMaintenance, string weather, int distance, string landingLocation) : base(pilotClass, lastMaintenance, weather, distance, landingLocation)
         {
         }
 
-        public override double  checkFlightSpecificRisks()
+        public override double checkFlightSpecificRisks()
         {
             return 1000.20;
         }
@@ -36,6 +36,24 @@ namespace Pirma_dalis.Template
                 return 3000.16;
             else
                 return 999.99;
+        }
+
+        public override double crewCost()
+        {
+            return 2 * 600 + 3 * 300;
+        }
+
+        public override double fuelCost(int distance)
+        {
+            return distance * 0.77;
+        }
+
+        public override double permissionCost(string landingLocation)
+        {
+            if (landingLocation == "Planned")
+                return 300;
+            else
+                return 1200.15;
         }
     }
 }

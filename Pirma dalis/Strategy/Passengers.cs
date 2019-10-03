@@ -4,35 +4,38 @@ using System.Text;
 
 namespace Pirma_dalis.Strategy
 {
-    class Cargo : IInsuranceCalculator
+    public class Passengers : IInsuranceCalculator
     {
         public double checkFlightSpecificRisks()
         {
-            return 1000.20;
+            return 3000.99;
         }
 
         public double checkLastMaintenance(int lastMaintenance)
         {
-            return lastMaintenance * 1000.99;
+            return lastMaintenance * 250;
         }
 
         public double checkPilotClass(string pilotClass)
         {
             if (pilotClass == "F")
-                return 1600.15;
+                return 2000.66;
             else if (pilotClass == "E")
-                return 1500.45;
+                return 1875.25;
+            else if (pilotClass == "D")
+                return 1605.23;
             else
-                return 1000.55;
+                return 1540.36;
         }
 
         public double checkWeatherConditions(string weather)
         {
             if (weather == "Bad")
                 return 3000.16;
+            else if (weather == "Decent")
+                return 2600.12;
             else
-                return 999.99;
+                return 1500.99;
         }
-
     }
 }
