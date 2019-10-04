@@ -12,7 +12,7 @@ namespace Pirma_dalis
             Console.WriteLine("Strategy:");
 
             FlightStrategy cargoStrat = new FlightStrategy("A",5,"Bad", new Strategy.Cargo());
-            FlightStrategy airbusStrat = new FlightStrategy("C", 9, "Normal", new Strategy.Passengers());
+            FlightStrategy airbusStrat = new FlightStrategy("C", 9, "Normal", new Strategy.AirBus());
 
             
             value = cargoStrat.calInsurace();
@@ -41,7 +41,7 @@ namespace Pirma_dalis
             //A reikalvavimas - kita esybe
             Console.WriteLine();
             Console.WriteLine("Kita esybe:");
-            Strategy.Ship cruise = new Strategy.Ship("S", 6, "Bad", new Passengers());
+            Strategy.Ship cruise = new Strategy.Ship("S", 6, "Bad", new AirBus());
 
             value = cruise.calInsurace();
 
@@ -53,7 +53,7 @@ namespace Pirma_dalis
             Console.WriteLine();
             Console.WriteLine("Strategy:");
             FlightStrategy cargo_private_strat = new FlightStrategy("A", 2, "Sunny", new Cargo(), 20000, "Scketchy", new Private());
-            FlightStrategy airbus_line_strat = new FlightStrategy("SS", 9, "Sunny", new Passengers(), 3500, "Planned", new AirLines());
+            FlightStrategy airbus_line_strat = new FlightStrategy("SS", 9, "Sunny", new AirBus(), 3500, "Planned", new AirLines());
 
             Console.WriteLine("trip cost of private cargo flight " + cargo_private_strat.calTripCost());
             Console.WriteLine("trip cost of air lines bus flight " + airbus_line_strat.calTripCost());

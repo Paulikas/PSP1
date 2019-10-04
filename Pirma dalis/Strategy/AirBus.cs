@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Pirma_dalis.Strategy
 {
-    public class Passengers : IInsuranceCalculator
+    public class AirBus : IInsuranceCalculator
     {
         public double checkFlightSpecificRisks()
         {
