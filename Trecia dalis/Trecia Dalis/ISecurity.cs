@@ -4,7 +4,12 @@ using System.Text;
 
 namespace Pirma_dalis.Trecia_Dalis
 {
-    interface IShoes
+    interface ISecurity
     {
+        void checkWindows();
+
+        void openWindows();
+
+        void closeWindows();
     }
 }

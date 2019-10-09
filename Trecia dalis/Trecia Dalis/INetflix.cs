@@ -4,7 +4,10 @@ using System.Text;
 
 namespace Pirma_dalis.Trecia_Dalis
 {
-    class TvNetflix
+    interface INetflix
     {
+        void playMovie(string movie);
+
+        void browsMovie();
     }
 }

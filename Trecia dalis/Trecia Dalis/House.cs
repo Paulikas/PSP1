@@ -6,13 +6,13 @@ namespace Pirma_dalis.Trecia_Dalis
 {
     class House
     {
-        int temp = 0;
+        public int temp = 0;
 
-        void warmUp()
+        public void warmUp()
         {
             temp += 1;
         }
-        void warmUp(int amount)
+        public void warmUp(int amount)
         {
             temp += amount;
         }

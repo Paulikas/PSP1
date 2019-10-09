@@ -20,4 +20,5 @@ namespace Pirma_dalis.Trecia_Dalis
         {
             Console.WriteLine("Windows opened");
         }
+    }
 }

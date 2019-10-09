@@ -6,15 +6,15 @@ namespace Pirma_dalis.Trecia_Dalis
 {
     class TV
     {
-        string channel;
-        string language;
+        public string channel;
+        public string language;
 
-        void changeChannel(string channel)
+        public void changeChannel(string channel)
         {
             this.channel = channel; 
         }
 
-        void changeLanguage(string language)
+        public void changeLanguage(string language)
         {
             this.language = language;
         }

@@ -6,22 +6,21 @@ namespace Pirma_dalis.Trecia_Dalis
 {
     class Closet
     {
-        List<string> shirts = new List<string>();
+        public List<string> shirts = new List<string>();
 
-        void addShirt(string shirt)
+        public void addShirt(string shirt)
         {
             shirts.Add(shirt);
         }
 
-        void showShirts()
+        public void showShirts()
         {
-            foreach (string i in shirts)
-            {
+            foreach(string i in shirts){
                 Console.WriteLine(i);
             }
         }
 
-        void removeShirt(string shirt)
+        public void removeShirt(string shirt)
         {
             shirts.Remove(shirt);
         }

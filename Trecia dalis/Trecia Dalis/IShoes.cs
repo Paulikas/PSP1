@@ -4,7 +4,10 @@ using System.Text;
 
 namespace Pirma_dalis.Trecia_Dalis
 {
-    interface INetflix
+    interface IShoes
     {
+        void addShoes(string shoe);
+
+        void browsShoes();
     }
 }
