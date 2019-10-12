@@ -9,6 +9,7 @@ namespace Pirma_dalis.Template
         public CargoAirLines(string pilotClass, int lastMaintenance, string weather, int distance, string landingLocation) : base(pilotClass, lastMaintenance, weather, distance, landingLocation)
         {
         }
+        AirLines al = new AirLines();
 
         public override double checkFlightSpecificRisks()
         {
@@ -40,20 +41,17 @@ namespace Pirma_dalis.Template
 
         public override double crewCost()
         {
-            return 2 * 600 + 3 * 300;
+            return al.crewCost();
         }
 
         public override double fuelCost(int distance)
         {
-            return distance * 0.77;
+            return al.fuelCost(distance);
         }
 
         public override double permissionCost(string landingLocation)
         {
-            if (landingLocation == "Planned")
-                return 300;
-            else
-                return 1200.15;
+            return al.permissionCost(landingLocation);
         }
     }
 }

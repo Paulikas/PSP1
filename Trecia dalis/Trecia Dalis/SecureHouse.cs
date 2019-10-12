@@ -1,24 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Trecia_dalis.Trecia_Dalis;
 
 namespace Pirma_dalis.Trecia_Dalis
 {
     class SecureHouse : House, ISecurity
     {
-        public void checkWindows()
+        SecureWindows sw = new SecureWindows();
+
+
+        public void checkEntriePoints(bool entries)
         {
-            Console.WriteLine("Windows checked");
+            sw.checkEntriePoints(entries);
         }
 
-        public void closeWindows()
+        public void openEntriePoints()
         {
-            Console.WriteLine("Windows closed");
+            sw.openEntriePoints();
         }
 
-        public void openWindows()
+        public void closeEntriePoints()
         {
-            Console.WriteLine("Windows opened");
+            sw.closeEntriePoints();
         }
     }
 }

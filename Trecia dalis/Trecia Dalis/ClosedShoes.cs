@@ -1,23 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Trecia_dalis.Trecia_Dalis;
 
 namespace Pirma_dalis.Trecia_Dalis
 {
-    class ClosedShoes : Closet, IShoes
+    class ClosedShoes : Closet
     {
-        List<string> shoes = new List<string>();
+        Sneakers s = new Sneakers();
         public void addShoes(string shoe)
         {
-            shoes.Add(shoe);
+            s.addShoes(shoe);
         }
 
         public void browsShoes()
         {
-            foreach (string i in shoes)
-            {
-                Console.WriteLine(i);
-            }
+            s.browsShoes();
         }
     }
 }

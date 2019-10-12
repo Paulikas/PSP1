@@ -10,6 +10,8 @@ namespace Pirma_dalis.Template
         {
         }
 
+        Private p = new Private();
+
         public override double checkFlightSpecificRisks()
         {
             return 3000.99;
@@ -44,20 +46,17 @@ namespace Pirma_dalis.Template
 
         public override double crewCost()
         {
-            return 2 * 500 + 2 * 300;
+            return p.crewCost();
         }
 
         public override double fuelCost(int distance)
         {
-            return distance * 0.68;
+            return p.fuelCost(distance);
         }
 
         public override double permissionCost(string landingLocation)
         {
-            if (landingLocation == "Busy")
-                return 1000;
-            else
-                return 600;
+            return p.permissionCost(landingLocation);
         }
     }
 }

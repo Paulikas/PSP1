@@ -6,10 +6,10 @@ namespace Pirma_dalis.Trecia_Dalis
 {
     interface ISecurity
     {
-        void checkWindows();
+        void checkEntriePoints(bool entries);
 
-        void openWindows();
+        void openEntriePoints();
 
-        void closeWindows();
+        void closeEntriePoints();
     }
 }

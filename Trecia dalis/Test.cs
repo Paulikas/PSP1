@@ -14,7 +14,9 @@ namespace Pirma_dalis.Trecia_Dalis
 
             sh.warmUp();
             Console.WriteLine(sh.temp);
-            sh.closeWindows();
+            sh.closeEntriePoints();
+
+            check(sh);
 
             cs.addShirt("Blue");
             cs.showShirts();
@@ -22,6 +24,12 @@ namespace Pirma_dalis.Trecia_Dalis
             tn.changeChannel("Netflix");
             Console.WriteLine(tn.channel);
             tn.browsMovie();
+        }
+
+        static public void check(ISecurity s)
+        {
+            Console.WriteLine("method:");
+            s.checkEntriePoints(false);
         }
     }
 }

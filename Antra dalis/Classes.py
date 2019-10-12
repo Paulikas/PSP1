@@ -1,11 +1,10 @@
 from abc import ABC, abstractmethod
 
 
-class Flight(ABC):
+class Flight():
 
     pilotClass = ""
     lastMaintenace = 0
-    weather = ""
     distance = 0
     landingLocation = ""
 
@@ -15,22 +14,20 @@ class Flight(ABC):
         self.distance = distance
         self.landingLocation = landingLocation
 
-    @abstractmethod
     def checkPilotClass(self, pilotClass):
         pass
 
-    @abstractmethod
     def checkLastMaintenance(self, lastMaintenance):
         pass
 
     def calInsurence(self):
+        print("lasM: "+str(self.checkLastMaintenance(self.lastMaintenace)))
+        print("pilot: "+str(self.checkPilotClass(self.pilotClass)))
         return self.checkLastMaintenance(self.lastMaintenace) + self.checkPilotClass(self.pilotClass)
 
-    @abstractmethod
     def permissionCost(self, landingLocation):
         pass
 
-    @abstractmethod
     def fuelCost(self, distance):
         pass
 
@@ -63,3 +60,30 @@ class AirLines():
 
     def fuelCost(self, distance):
         return distance * 0.77
+
+
+class AirBus(object):
+    def checkPilotClass(self, pilotClass):
+        if pilotClass == "F":
+            return 2000.66
+        elif pilotClass == "E":
+            return 1875.25
+        elif pilotClass == "D":
+            return 1605.23
+        else:
+            return 1540.36
+
+    def checkLastMaintenance(self, lastMaintenance):
+        return lastMaintenance * 250
+
+
+class Cargo(object):
+
+    def checkPilotClass(self, pilotClass):
+        if pilotClass == "Good":
+            return 300
+        else:
+            return 350
+
+    def checkLastMaintenance(self, lastMaintenance):
+        return lastMaintenance * 120

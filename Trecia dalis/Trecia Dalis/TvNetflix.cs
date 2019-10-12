@@ -1,30 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Trecia_dalis.Trecia_Dalis;
 
 namespace Pirma_dalis.Trecia_Dalis
 {
-    class TvNetflix : TV, INetflix
+    class TvNetflix : TV
     {
-        List<string> movies = new List<string>()
-        {
-            "Movie1",
-            "Movie2"
-        };
+        NetflixStandart ns = new NetflixStandart();
+
         public void browsMovie()
         {
-            foreach (string i in movies)
-            {
-                Console.WriteLine(i);
-            }
+            ns.browsMovie();
         }
 
         public void playMovie(string movie)
         {
-            if (movies.Contains(movie))
-                Console.WriteLine("Now playing " + movie);
-            else
-                Console.WriteLine("There is no such movie");
+            ns.playMovie(movie);
         }
     }
 }

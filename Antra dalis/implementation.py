@@ -1,41 +1,23 @@
-from FlightTemplate import Flight as F, Private, AirLines
+from Classes import Flight as F, Private, AirLines, Cargo, AirBus
 
 
-class privateCargo(F, Private):
-    def __init__(self, *args):
+class privateCargo(Private, Cargo, F):
+    '''def __init__(self, *args):
         super(privateCargo, self).__init__(*args)
 
     def checkPilotClass(self, pilotClass):
-        if pilotClass == "Good":
-            return 300
-        else:
-            return 350
+        return Cargo.checkPilotClass(self, pilotClass)
 
     def checkLastMaintenance(self, lastMaintenance):
-        return lastMaintenance * 120
+        return Cargo.checkLastMaintenance(self, lastMaintenance)
 
     def permissionCost(self, landingLocation):
         return Private.permissionCost(self, landingLocation)
 
     def fuelCost(self, distance):
-        return Private.fuelCost(self, distance)
+        return Private.fuelCost(self, distance)'''
 
 
-class AirLinesCargo(F, AirLines):
+class AirLinesCargo(AirLines, Cargo, F):
     def __init__(self, *args):
         super(AirLinesCargo, self).__init__(*args)
-
-    def checkPilotClass(self, pilotClass):
-        if pilotClass == "Good":
-            return 300
-        else:
-            return 350
-
-    def checkLastMaintenance(self, lastMaintenance):
-        return lastMaintenance * 120
-
-    def permissionCost(self, landingLocation):
-        return AirLines.permissionCost(self, landingLocation)
-
-    def fuelCost(self, distance):
-        return AirLines.fuelCost(self, distance)
