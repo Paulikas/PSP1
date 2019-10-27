@@ -17,6 +17,8 @@ namespace Pirma_dalis.Trecia_Dalis
             sh.closeEntriePoints();
 
             check(sh);
+            newShoes(cs);
+            movieList(tn);
 
             cs.addShirt("Blue");
             cs.showShirts();
@@ -30,6 +32,17 @@ namespace Pirma_dalis.Trecia_Dalis
         {
             Console.WriteLine("method:");
             s.checkEntriePoints(false);
+        }
+
+        static public void newShoes(IShoes s)
+        {
+            s.addShoes("Sneaker");
+            s.browsShoes();
+        }
+
+        static public void movieList(INetflix n)
+        {
+            n.browsMovie();
         }
     }
 }

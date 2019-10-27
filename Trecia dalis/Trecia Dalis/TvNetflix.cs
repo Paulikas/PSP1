@@ -5,7 +5,7 @@ using Trecia_dalis.Trecia_Dalis;
 
 namespace Pirma_dalis.Trecia_Dalis
 {
-    class TvNetflix : TV
+    class TvNetflix : TV, INetflix
     {
         NetflixStandart ns = new NetflixStandart();
 

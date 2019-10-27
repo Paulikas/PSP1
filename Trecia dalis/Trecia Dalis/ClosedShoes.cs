@@ -5,7 +5,7 @@ using Trecia_dalis.Trecia_Dalis;
 
 namespace Pirma_dalis.Trecia_Dalis
 {
-    class ClosedShoes : Closet
+    class ClosedShoes : Closet, IShoes
     {
         Sneakers s = new Sneakers();
         public void addShoes(string shoe)
